@@ -1,0 +1,16 @@
+kw1
+SELECT wycieczki.id, wycieczki.dataWyjazdu, wycieczki.cel, wycieczki.cena
+FROM wycieczki WHERE wycieczki.dostepna = 1;
+
+kw2
+SELECT zdjecia.nazwaPliku, zdjecia.podpis
+FROM zdjecia ORDER BY zdjecia.podpis DESC;
+
+kw3
+SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis
+FROM wycieczki JOIN zdjecia ON zdjecia.id = wycieczki.zdjecia_id
+WHERE wycieczki.cena > 1200;
+
+kw4
+ALTER TABLE wycieczki ADD liczbaDni INT UNSIGNED DEFAULT '1' NOT NULL
+AFTER dataWyjazdu;
